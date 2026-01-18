@@ -9,3 +9,5 @@ pillow
 qrcode
 python-multipart
 reportlab
+python-dotenv
+
