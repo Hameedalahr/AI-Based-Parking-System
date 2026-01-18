@@ -1,0 +1,5 @@
+secrets\service_account_key.json
+.env
+__pycache__/
+*.pyc
+config\serviceAccountKey.json

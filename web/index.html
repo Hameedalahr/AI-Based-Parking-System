@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Smart Parking Demo</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/jsqr/dist/jsQR.js"></script>
+  </head>
+  <body>
+    <header class="top-bar">
+      <h1>🚗 AI-Based Smart Parking System</h1>
+      <p>Real-time slot detection · QR-based exit · Automated billing</p>
+    </header>
+
+    <div class="dashboard">
+      <!-- LEFT PANEL -->
+      <div class="panel left-panel">
+        <div class="card">
+          <h2>📹 Parking Area</h2>
+
+          <div class="video-wrapper">
+            <video id="parkingVideo" autoplay muted playsinline preload="auto">
+              <source src="/web/assets/parking_demo.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <!-- <div class="slot-info">
+            <span id="slotCount">Available Slots: ---</span>
+          </div> -->
+        </div>
+      </div>
+
+      <!-- RIGHT PANEL -->
+     
+    <!-- RIGHT PANEL -->
+<div class="panel right-panel">
+
+  <!-- SLOT STATUS CARD -->
+  <div class="card slot-status-card">
+    <h2>🅿️ Slot Availability</h2>
+    <div id="slotCount" class="slot-count">
+      Available Slots: ---
+    </div>
+  </div>
+
+  <!-- TICKET OPERATIONS -->
+  <div class="card">
+    <h2>🎟 Ticket Operations</h2>
+
+    <label>Email ID</label>
+    <input
+      id="email"
+      type="email"
+      placeholder="example@gmail.com"
+    />
+
+    <button class="btn primary" onclick="generateTicket()">
+      Generate Ticket
+    </button>
+
+    <button class="btn danger" onclick="startQR()">
+      Release Ticket (Scan QR)
+    </button>
+
+    <button class="btn secondary" onclick="resetSlots()">
+      Reset Slots (Admin)
+    </button>
+
+    <div id="status" class="status-text"></div>
+  </div>
+
+  <!-- WEBCAM CARD -->
+  <div class="card webcam-card" id="qrSection">
+    <h2>📷 Exit Camera</h2>
+    <video id="qrVideo" autoplay muted playsinline></video>
+    <p class="hint">Align QR code inside the camera frame</p>
+  </div>
+
+</div>
+
+
+    <script src="demo.js"></script>
+  </body>
+</html>
